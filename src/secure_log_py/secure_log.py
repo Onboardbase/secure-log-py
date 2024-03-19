@@ -56,5 +56,3 @@ class SecureLog:
             cached_print(f'{self.log_prefix}', *args, **kwargs)
 
 print = SecureLog().secure_print
-
-print(["today 12345jjj "])
