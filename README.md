@@ -1,6 +1,12 @@
+<div style="text-align: center;">
+
 # SecureLog
 
 SecureLog is a Python library designed to enhance the security of logging by preventing the leakage of sensitive information. It checks log messages for secrets and prints them securely, ensuring that sensitive data is not exposed in logs.
+
+Check out other language support [JS](https://github.com/Onboardbase/secure-log)
+
+</div>
 
 ## Features
 
