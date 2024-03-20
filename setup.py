@@ -1,12 +1,15 @@
 from setuptools import setup
 
+with open('README.md', 'r') as f:
+    readme = f.read()
+    
 setup(
-    name='secure_log_py',
-    version='1.0',
+    name='secure_log',
+    version='0.1.1',
     author='Samuel Olusola',
     author_email='sola@onboardbase.com',
     description='A package for secure logging',
-    packages=['src/secure_log_py'],
+    packages=['secure_log'],
     install_requires=[
         # Add any dependencies required by your package here
     ],
