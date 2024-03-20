@@ -62,14 +62,6 @@ If a secret is detected in a log message, SecureLog can either issue a warning o
 secure_log.secure_print("This message contains a secret: SECRET_KEY")
 ```
 
-## Contributing
-
-Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTING.md) before getting started.
-
-## License
-
-SecureLog is released under the [MIT License](LICENSE).
-
 ## Contact
 
 For any questions or concerns, please open an issue on GitHub.
