@@ -5,7 +5,9 @@ with open('README.md', 'r') as f:
     
 setup(
     name='secure_log',
-    version='0.1.1',
+    version='0.1.2',
+    long_description=readme,
+    long_description_content_type='text/markdown',
     author='Samuel Olusola',
     author_email='sola@onboardbase.com',
     description='A package for secure logging',

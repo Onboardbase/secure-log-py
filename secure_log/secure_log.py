@@ -1,4 +1,16 @@
 import os
+from typing import TypedDict, Any, Optional
+
+class OptionsDict(TypedDict):
+    """
+    Options for configuring the SecureLog class.
+
+    Keys:
+        disableOn: The environment variable value on which console logging should be disabled. Expected type: str.
+        warnOnly: If True, only a warning is issued when a secret is detected in the log message. Otherwise the process exits. Expected type: bool.
+    """
+    disableOn: Optional[str]
+    warnOnly: Optional[bool]
 
 class SecureLog:
     """
@@ -8,9 +20,6 @@ class SecureLog:
 
     Attributes:
         options (dict): A dictionary of options for configuring the secure logging.
-        disable_on (str): The environment variable value on which console logging should be disabled.
-        log_prefix (str): The prefix to be added to the log messages.
-        secrets (dict): A dictionary of environment variables containing secrets.
 
     Methods:
         check_for_secrets(message): Checks if any secrets are present in the given message.
@@ -18,14 +27,14 @@ class SecureLog:
 
     """
 
-    def __init__(self, options=None):
+    def __init__(self, options: Optional[OptionsDict]=None):
         self.options = options or {}
         self.disable_on = self.options.get('disableOn')
         self.log_prefix = "[SECURE LOG]:"
         self.secrets = os.environ
         self.warnOnly = self.options.get('warnOnly', False)
 
-    def check_for_secrets(self, message):
+    def check_for_secrets(self, message: str) -> None:
         """
         Checks if any secrets are present in the given message.
 
@@ -39,7 +48,7 @@ class SecureLog:
                 if not self.warnOnly:
                     raise PotentialSecretsLeak("potential secret leak")
 
-    def secure_print(self, *args, **kwargs):
+    def secure_print(self, *args: Any, **kwargs: Any) -> None:
         """
         Prints the log message securely.
 
@@ -59,6 +68,6 @@ class PotentialSecretsLeak(Exception):
     "Raised when there is a secret in the log message"
     # pass
 
-def printRed(str):
-    print("\033[91m {}\033[00m".format(str))
+def printRed(s: str) -> None:
+    print("\033[91m {}\033[00m".format(s))
     
