@@ -2,6 +2,8 @@
 
 SecureLog is a Python library designed to enhance the security of logging by preventing the leakage of sensitive information. It checks log messages for secrets and prints them securely, ensuring that sensitive data is not exposed in logs.
 
+Check out other language support [JS](https://github.com/Onboardbase/secure-log)
+
 ## Features
 
 - **Secure Logging**: Automatically checks log messages for secrets and prints them securely.
@@ -55,14 +57,6 @@ If a secret is detected in a log message, SecureLog can either issue a warning o
 ```python
 secure_log.secure_print("This message contains a secret: SECRET_KEY")
 ```
-
-## Contributing
-
-Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTING.md) before getting started.
-
-## License
-
-SecureLog is released under the [MIT License](LICENSE).
 
 ## Contact
 
