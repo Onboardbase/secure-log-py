@@ -13,7 +13,7 @@ SecureLog is a Python library designed to enhance the security of logging by pre
 To install SecureLog, use pip:
 
 ```
-pip install secure-log==0.1.0
+pip install secure-log==0.1.1
 ```
 
 ## Usage
