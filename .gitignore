@@ -2,3 +2,4 @@
 /dist/*
 /secure_log_py.egg-info
 /__pycache__/*
+/.secure_log.egg-info/*
